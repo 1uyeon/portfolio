@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="JUYEON'S PORTFOLIO">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/img/thumbnail.png">
+  <meta property="og:description" content="웹퍼블리셔 이주연입니다.">
+  <!-- normalize.css : reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/font.css">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- GSAP, AOS -->
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>  
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+  <!-- js -->
+  <script src="./js/main.js"></script>
+  <title>Juyeon's portfolio</title>
+</head>
+<!-- 
+   ___  _   _ __   __ _____  _____  _   _ 
+  |_  || | | |\ \ / /|  ___||  _  || \ | |
+    | || | | | \ V / | |__  | | | ||  \| |
+    | || | | |  \ /  |  __| | | | || . ` |
+/\__/ /| |_| |  | |  | |___ \ \_/ /| |\  |
+\____/  \___/   \_/  \____/  \___/ \_| \_/
+                                          
+-->
+<body>
+  <header>
+    <div class="top-header">
+      <a href="/" class="logo">LEE.JUYEON</a>
+      <nav class="top-nav">
+        <ul>
+          <li class="scramble"><p class="go-home">HOME</p></li>
+          <li class="scramble"><p class="go-about">ABOUT ME</p></li>
+          <li class="scramble"><p class="go-works">WORKS</p></li>
+          <li class="scramble"><p class="go-contact">CONTACT</p></li>
+        </ul>
+      </nav>
+      <!-- <div class="top-right pc-only">
+        <div class="scramble">
+          <p>LET'S WORK TOGETHER !</p>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tr-line"></div>
+        <div class="bl-line"></div>
+        <div class="br-line"></div>
+      </div> -->
+    </div>
+  </header>
+  <section class="main-sec">
+    <div class="cl-text split">
+      <p>
+        * FOR A GOOD <br>
+        USER EXPERIENCE
+      </p>
+    </div>
+    <div class="bottom-txt split">
+      <p>PUBLISHER <br class="mo-only">LEEJUYEON</p>
+    </div>
+    <div class="bg-video">
+      <video poster="./assets/img/preload.png" class="bg-video-content" autoplay muted loop playsinline>
+        <source src="./assets/video/main.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="sight-line">
+      <div class="line-hr"></div>
+      <div class="line-vr"></div>
+      <div class="line-cross"></div>
+      <div class="line-circle"></div>
+    </div>
+  </section>
+  <section class="profile-sec">
+    <div class="sec-title">
+      <h1>ABOUT ME</h1>
+    </div>
+    <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      안녕하세요! 3년차 웹 퍼블리셔 이주연입니다. <br>
+      사용자가 편리한 웹사이트 제작을 목표로 하며,<br>
+      새로운 기능을 익히고 문제를 해결하는 과정에서 <br class="mo-only">성취감을 느낍니다.<br>
+      책임감을 가지고, 맡은 일에 최선을 다하며 <br>
+      지속적으로 성장하는 퍼블리셔가 되겠습니다. <br>
+    </p>
+    <div class="profile">
+      <div class="pf-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <h2>WORK EXPERIENCE</h2>
+        <ul>
+          <li><span>2022.04 ~ 2024.12</span> (주)오감코퍼레이션 <span>/ 웹에이전시</span> </li>
+        </ul>
+      </div>
+      <div class="pf-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"> 
+        <h2>EDUCATION</h2>
+        <ul>
+          <li><span>2021. 06 ~ 2021. 11</span> 이젠아카데미컴퓨터학원 UI/UX 반응형<br class="mo-only"> 웹디자인(웹퍼블리셔) 과정 수료</li>
+          <li><span>2016. 03 ~ 2021. 02</span> 국립강릉원주대학교 컴퓨터공학과 졸업</li>
+        </ul>
+      </div>
+      <div class="pf-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <h2>LICENSE</h2>
+        <ul>
+          <li><span  class="short">2022. 04</span> 웹디자인기능사</li>
+          <li><span  class="short">2021. 09</span> GTQi(일러스트) 1급</li>
+          <li><span  class="short">2021. 08</span> GTQ(포토샵) 1급</li>
+          <li><span  class="short">2020. 08</span> 컴퓨터활용능력 2급</li>
+          <li><span  class="short">2019. 08</span> 정보처리기사</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flowing-text">
+      <ul>
+        <li>RESPONSIBILITY</li>
+        <li>DILIGENCE</li>
+        <li>ATTENTION-TO-DETAIL</li>
+        <li>ADAPTABLE</li>
+        <li>POSITIVE</li>
+        <li>PASSIONATE</li>
+        <li>RESPONSIBILITY</li>
+        <li>DILIGENCE</li>
+        <li>ATTENTION-TO-DETAIL</li>
+        <li>ADAPTABLE</li>
+        <li>POSITIVE</li>
+        <li>PASSIONATE</li>
+      </ul>
+    </div>
+  </section>
+  <section class="work-sec">
+    <div class="sec-title">
+      <h1>WORKS</h1>
+    </div>
+    <div class="list-area">
+      <ul class="work-list" >
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/hyundai.png" alt="현대카드">
+            </div>
+            <ul class="info">
+              <li class="title">현대카드</li>
+              <li class="desc">카드 프로모션/이벤트 페이지 운영</li>
+              <li class="date">2024. 03 ~ 2024. 09</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 100%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/atera.png" alt="아테라">
+            </div>
+            <ul class="info">
+              <li class="title">금호건설 아테라</li>
+              <li class="desc">아파트 브랜드 웹사이트 신규 구축</li>
+              <li class="date">2024. 03 ~ 2024. 06</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 20%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/sergio.png" alt="세르지오 타키니">
+            </div>
+            <ul class="info">
+              <li class="title">세르지오 타키니</li>
+              <li class="desc">패션 브랜드 웹사이트 신규 구축/운영</li>
+              <li class="date">2023. 02 ~ 2024. 02</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/duvetica.png" alt="듀베티카">
+            </div>
+            <ul class="info">
+              <li class="title">듀베티카</li>
+              <li class="desc">패션 브랜드 웹사이트 리뉴얼/운영</li>
+              <li class="date">2023. 02 ~ 2024. 02</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/supra.png" alt="수프라">
+            </div>
+            <ul class="info">
+              <li class="title">수프라</li>
+              <li class="desc">패션 브랜드 웹사이트 신규 구축/운영</li>
+              <li class="date">2022. 12 ~ 2024. 02</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/ogam.png" alt="오감">
+            </div>
+            <ul class="info">
+              <li class="title">(주)오감코퍼레이션</li>
+              <li class="desc">회사소개 웹사이트 신규 구축</li>
+              <li class="date">2023. 09 ~ 2023. 11</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/arena.png" alt="아레나코리아">
+            </div>
+            <ul class="info">
+              <li class="title">아레나코리아</li>
+              <li class="desc">웹사이트 신규 구축/운영</li>
+              <li class="date">2022. 12 ~ 2023. 10</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 30%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/passion5.png" alt="패션5">
+            </div>
+            <ul class="info">
+              <li class="title">패션5</li>
+              <li class="desc">웹사이트 이전작업 및 리뉴얼</li>
+              <li class="date">2023. 04 ~ 2023. 06</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 100%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/paris_c.png" alt="파리크라상">
+            </div>
+            <ul class="info">
+              <li class="title">파리크라상</li>
+              <li class="desc">웹사이트 이전작업 및 리뉴얼</li>
+              <li class="date">2023. 04 ~ 2023. 06</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/paris_c_2.png" alt="파리크라상 상품권">
+            </div>
+            <ul class="info">
+              <li class="title">파리크라상 상품권</li>
+              <li class="desc">웹사이트 이전작업 및 리뉴얼</li>
+              <li class="date">2023. 04 ~ 2023. 06</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/arban.png" alt="어반브레이크">
+            </div>
+            <ul class="info">
+              <li class="title">2022 어반브레이크</li>
+              <li class="desc">웹사이트 신규 구축</li>
+              <li class="date">2022. 05 ~ 2022. 07</li>
+              <li class="keywords">
+                <span>반응형</span><span>기여도 50%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+          <a href="javascript:void(0);">
+            <div class="thumnail">
+              <img src="./assets/img/hanmi.png" alt="한미면세앱">
+            </div>
+            <ul class="info">
+              <li class="title">한미면세앱 관리자페이지</li>
+              <li class="desc">관리자 전용 웹사이트(BO) 구축</li>
+              <li class="date">2022. 04 ~ 2022. 05</li>
+              <li class="keywords">
+                <span>적응형</span><span>기여도 100%</span>
+              </li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="contact-sec">
+    <ul class="contact-info">
+      <li>이주연 (LEE JUYEON)</li>
+      <li>
+        <span>PHONE</span>
+        <a href="tel:010-4324-5090">010.4324.5090</a>
+      </li>
+      <li>
+        <span>E-MAIL</span>
+        <a href="mailto:mhb016@naver.com">mhb016@naver.com</a>
+      </li>
+    </ul>
+    <div class="contact-now">
+      <p>CONTACT NOW</p>
+    </div>
+  </section>
+
+  <!-- work detail -->
+  <div class="work-detail detail-01">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/01-hc.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-02">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/02-at.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-03">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/03-st.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-04">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/04-dv.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-05">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/05-sp.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-06">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/06-og.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-07">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/07-ar.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-08">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/08-ps.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-09">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/09-pc.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-10">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/10-pc2.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-11">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/11-ab.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+  <div class="work-detail detail-12">
+    <div class="modal-box" data-lenis-prevent>
+      <div data-include-path="./html/12-hm.html"></div>
+      <div class="btn-close"></div>
+    </div>
+  </div>
+</body>
+</html>

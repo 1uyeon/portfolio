@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuecyr';
+    src: url('/fonts/helveticaneuecyr_ultralight.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneuecyr';
+    src: url('/fonts/helveticaneuecyr_thin.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneuecyr';
+    src: url('/fonts/helveticaneuecyr_roman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneuecyr';
+    src: url('/fonts/HelveticaNeueCyr_Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneuecyr';
+    src: url('/fonts/helveticaneuecyr_black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
