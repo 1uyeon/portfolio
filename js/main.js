@@ -36,21 +36,51 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
 
-  // 헤더 네비게이션 클릭 시 이동
-  const scrollMap = {
-    '.go-home': '.main-sec',
-    '.go-about': '.profile-sec',
-    '.go-works': '.work-sec',
-    '.go-contact': '.contact-sec'
-  };
-  Object.entries(scrollMap).forEach(([triggerSelector, targetSelector]) => {
-    const trigger = document.querySelector(triggerSelector);
-    if (trigger) {
-      trigger.addEventListener('click', () => {
-        lenis.scrollTo(targetSelector);
-      });
-    }
+  /* 헤더 색상 변경 */
+  const header = document.querySelector("header");
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach(section => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: "bottom top",
+      toggleClass: { targets: "header", className: section.className + "-active" }
+    });
   });
+
+  /* 헤더 메뉴 버튼 */
+  const openMenubtn = document.querySelector('.open-nav');
+  const closeMenubtn = document.querySelector('.close-nav');
+  openMenubtn.addEventListener('click', function() {  // 메뉴 열기
+    document.querySelector('.menu-container').classList.add('open');
+    openMenubtn.classList.remove('active')
+    closeMenubtn.classList.add('active')
+    blockBodyScroll();
+  });
+  closeMenubtn.addEventListener('click', function() {  // 메뉴 닫기
+    document.querySelector('.menu-container').classList.remove('open');
+    openMenubtn.classList.add('active')
+    closeMenubtn.classList.remove('active')
+    unblockBodyScroll();
+  });
+
+
+  // 헤더 네비게이션 클릭 시 이동
+  // const scrollMap = {
+  //   '.go-home': '.main-sec',
+  //   '.go-about': '.profile-sec',
+  //   '.go-works': '.work-sec',
+  //   '.go-contact': '.contact-sec'
+  // };
+  // Object.entries(scrollMap).forEach(([triggerSelector, targetSelector]) => {
+  //   const trigger = document.querySelector(triggerSelector);
+  //   if (trigger) {
+  //     trigger.addEventListener('click', () => {
+  //       lenis.scrollTo(targetSelector);
+  //     });
+  //   }
+  // });
 
   // work-detail 모달 관련
   const workDetail = document.querySelectorAll('.work-detail');
@@ -117,53 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.fonts.ready.then(() => {
   gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin);
 
-  // 텍스트 올라오는 효과
-  gsap.set(".split", { opacity: 1 });
-
-  let split;
-  SplitText.create(".split", {
-    type: "words,lines",
-    linesClass: "line",
-    autoSplit: true,
-    mask: "lines",
-    onSplit: (self) => {
-      split = gsap.from(self.lines, {
-        duration: 1.6,
-        yPercent: 100,
-        opacity: 0,
-        stagger: 0.1,
-        ease: "expo.out",
-      });
-      return split;
-    }
-  });
-
-  // 텍스트 랜덤 스크램블 효과
-  const defaultChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-  const config = {
-    random: true,
-  }
-  const links = document.querySelectorAll('.scramble')
-  const scramble = (event) => {
-    const target = event.target.firstElementChild
-    if (!gsap.isTweening(target) && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-      gsap.to(target, {
-        duration: .4,
-        ease: 'sine.inOut',
-        scrambleText: {
-          text: target.innerText,
-          speed: 2,
-          chars: config.random ? defaultChars : target.innerText.replace(/\s/g, '')
-        }
-      });
-    }
-  }
-  for (const link of links) {
-    link.addEventListener('pointerenter', scramble)
-    link.addEventListener('focus', scramble)
-  }
-
-  // 조준선 마우스 트래킹
+  // MAIN : 조준선 마우스 트래킹
   document.querySelector(".main-sec").addEventListener("mousemove", function (e) {
     const x = (e.clientX - window.innerWidth / 2) / 10;
     const y = (e.clientY - window.innerHeight / 2) / 10;
@@ -171,26 +155,18 @@ document.fonts.ready.then(() => {
     gsap.to(".main-sec .sight-line .line-hr", { y: y });
     gsap.to(".main-sec .sight-line .line-vr", { x: x });
     gsap.to(".main-sec .sight-line .line-cross", { x: x , y: y });
+  });  
+
+  // 1 -> 2 섹션 parallax 효과
+  ScrollTrigger.create({
+    trigger: ".main-sec",
+    start: "top top",
+    end: "bottom top",  
+    pin: true,
+    pinSpacing: false   
   });
 
-  // 스크롤 시 텍스트 채워짐
-  const split2 = new SplitText(".sec-title h1", { type: "lines" });
-
-  split2.lines.forEach((target) => {
-    gsap.to(target, {
-      backgroundPositionX: 0,
-      ease: "sine.inOut",
-      duration: 1,
-      scrollTrigger: {
-        trigger: target,
-        scrub: 1,
-        start: "top center",
-        end: "bottom center"
-      }
-    });
-  });
-
-  // 한 글자씩 올라오는 효과
+  // CONTACT : 한 글자씩 올라오는 효과
   const h1Text = new SplitType(".contact-now", {
     types: "words, chars",
   });
@@ -204,28 +180,4 @@ document.fonts.ready.then(() => {
     },
   })
   .from(".contact-now .char", { yPercent: 100, opacity: 0, stagger: 0.05, duration: 1, ease: "power3.out" }, "text")
-
-  // iOS용 강제 리렌더링 함수
-  function forceIOSRepaint() {
-    if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
-      document.body.style.display = 'none';
-      document.body.offsetHeight; // reflow
-      document.body.style.display = '';
-    }
-  }
-
-  const white = ScrollTrigger.create({
-    trigger: '.work-sec',
-    start: "0% 30%",
-    end: "bottom+=300 top",
-    // endTrigger: "#footer",
-    onEnter: () => {
-      document.body.classList.add("white")
-      forceIOSRepaint();
-    },
-    onLeaveBack: () => {
-      document.body.classList.remove("white")
-      forceIOSRepaint();
-    }
-  });
 }); 

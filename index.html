@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/font.css">
   <!-- favicon -->
@@ -49,34 +50,39 @@
   <header>
     <div class="top-header">
       <a href="/" class="logo">LEE.JUYEON</a>
-      <nav class="top-nav">
-        <ul>
-          <li class="scramble"><p class="go-home">HOME</p></li>
-          <li class="scramble"><p class="go-about">ABOUT ME</p></li>
-          <li class="scramble"><p class="go-works">WORKS</p></li>
-          <li class="scramble"><p class="go-contact">CONTACT</p></li>
-        </ul>
-      </nav>
-      <!-- <div class="top-right pc-only">
-        <div class="scramble">
-          <p>LET'S WORK TOGETHER !</p>
-        </div>
-        <div class="tl-line"></div>
-        <div class="tr-line"></div>
-        <div class="bl-line"></div>
-        <div class="br-line"></div>
-      </div> -->
+      <div class="open-nav active">
+        <svg width="48" height="34" viewBox="0 0 48 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.2002 6.7998H41.2002" stroke="currentColor" stroke-width="1.8572" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path d="M7.2002 17H41.2002" stroke="currentColor" stroke-width="1.8572" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path d="M7.2002 27.2002H41.2002" stroke="currentColor" stroke-width="1.8572" stroke-miterlimit="10" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
   </header>
-  <section class="main-sec">
-    <div class="cl-text split">
-      <p>
-        * FOR A GOOD <br>
-        USER EXPERIENCE
-      </p>
+  <div class="menu-container">
+    <div class="close-nav">
+      <img src="./assets/img/close-x.svg" alt="close-menu">
     </div>
-    <div class="bottom-txt split">
-      <p>PUBLISHER <br class="mo-only">LEEJUYEON</p>
+    <nav class="top-nav">
+      <ul>
+        <li class="on"><p class="go-home"><a href="/">HOME</a></p></li>
+        <li><p class="go-about">ABOUT ME</p></li>
+        <li><p class="go-works">THE WORK</p></li>
+        <li><p class="go-project">PROJECT</p></li>
+      </ul>
+    </nav>
+    <div class="info-container">
+      <h4>E-MAIL</h4>
+      <a href="mailto:mhb016@naver.com">mhb016@naver.com</a>
+      <h4>TEL</h4>
+      <a href="tel:010-4324-5090">010.4324.5090</a>
+    </div>
+  </div>
+  <section class="main-sec">
+    <div class="main-title">
+      <div>LIVE</div>
+      <div>EXPLORE</div>
+      <div>ENJOY</div>
     </div>
     <div class="bg-video">
       <video poster="./assets/img/preload.png" class="bg-video-content" autoplay muted loop playsinline>
@@ -91,6 +97,65 @@
     </div>
   </section>
   <section class="profile-sec">
+    <div class="profile-container">
+      <div class="slogan-container">
+        <div class="sentence" data-aos="fade-up" data-aos-duration="600">
+          <div><span class="trans">J</span>UST KEEP LEARNING</div>
+        </div>
+        <div class="sentence" data-aos="fade-up" data-aos-duration="600">
+          <div><span class="trans">U</span>NLOCK </div><div>CREATIVITY</div>
+        </div>
+        <div class="sentence" data-aos="fade-up" data-aos-duration="600">
+          <div><span class="trans">Y</span>OUR </div>
+          <div class="middle">
+            <video class="pr-video-content" autoplay muted loop playsinline>
+              <source src="./assets/video/GROWTH.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div> GROWTH</div>
+        </div>
+        <div class="sentence" data-aos="fade-up" data-aos-duration="600">
+          <div><span class="trans">E</span>MBRACE </div>
+          <div class="middle">
+            <video class="pr-video-content" autoplay muted loop playsinline>
+              <source src="./assets/video/DETAIL.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div> DETAILS</div>
+        </div>
+        <div class="sentence" data-aos="fade-up" data-aos-duration="600">
+          <div><span class="trans">O</span>WN </div>
+          <div class="middle">
+            <video class="pr-video-content" autoplay muted loop playsinline>
+              <source src="./assets/video/PASSION.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div> PASSION</div>
+        </div>    
+        <div class="sentence" data-aos="fade-up" data-aos-duration="600">
+          <div><span class="trans">N</span>EVER </div>
+          <div class="middle">
+            <video class="pr-video-content" autoplay muted loop playsinline>
+              <source src="./assets/video/NEVERSTOP.mp4" type="video/mp4">
+            </video>            
+          </div>
+          <div> STOP</div>
+        </div>             
+      </div>
+      <div class="desc-container" data-aos="fade-left" data-aos-duration="800">
+        <p>
+          저는 <strong>끊임없이 배우며</strong> <br class="mo-only">새로운 가능성을 찾아갑니다. <br><br class="mo-only">
+          숨겨진 <strong>창의력</strong>을 열고, <br class="mo-only">
+          <strong>더 나은 성장</strong>을 이루며, <br>
+          작은 부분까지 <strong>세심하게</strong> 살피고,  <br>
+          무엇보다 <strong>열정을 잃지 않고 도전</strong>하겠습니다.
+        </p>
+        <a href="javascript:void(0);" class="btn-detail">MORE DETAIL</a>
+      </div>
+    </div>
+
+
+<!--     
     <div class="sec-title">
       <h1>ABOUT ME</h1>
     </div>
@@ -141,196 +206,76 @@
         <li>POSITIVE</li>
         <li>PASSIONATE</li>
       </ul>
-    </div>
+    </div> -->
   </section>
   <section class="work-sec">
-    <div class="sec-title">
-      <h1>WORKS</h1>
+    <div class="sec-title" data-aos="fade-down" data-aos-duration="800">
+      <h1>WORK</h1>
     </div>
     <div class="list-area">
-      <ul class="work-list" >
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+      <ul class="work-list grid" data-aos="fade-left" data-aos-duration="800">
+        <li class="work-item">
           <a href="javascript:void(0);">
             <div class="thumnail">
               <img src="./assets/img/hyundai.png" alt="현대카드">
             </div>
             <ul class="info">
-              <li class="title">현대카드</li>
-              <li class="desc">카드 프로모션/이벤트 페이지 운영</li>
-              <li class="date">2024. 03 ~ 2024. 09</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 100%</span>
-              </li>
+              <li class="title">HYUNDAI CARD</li>
+              <li class="desc"><div class="line"></div>프로모션/이벤트 페이지 운영</li>
             </ul>
           </a>
         </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+        <li class="work-item">
           <a href="javascript:void(0);">
             <div class="thumnail">
-              <img src="./assets/img/atera.png" alt="아테라">
+              <img src="./assets/img/atera.jpg" alt="아테라">
             </div>
             <ul class="info">
-              <li class="title">금호건설 아테라</li>
-              <li class="desc">아파트 브랜드 웹사이트 신규 구축</li>
-              <li class="date">2024. 03 ~ 2024. 06</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 20%</span>
-              </li>
+              <li class="title">ATERA</li>
+              <li class="desc"><div class="line"></div>웹사이트 구축</li>
             </ul>
           </a>
         </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+        <li class="work-item">
           <a href="javascript:void(0);">
             <div class="thumnail">
               <img src="./assets/img/sergio.png" alt="세르지오 타키니">
             </div>
             <ul class="info">
-              <li class="title">세르지오 타키니</li>
-              <li class="desc">패션 브랜드 웹사이트 신규 구축/운영</li>
-              <li class="date">2023. 02 ~ 2024. 02</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
+              <li class="title">SERGIO TACCHINI</li>
+              <li class="desc"><div class="line"></div>이커머스 구축/운영</li>
             </ul>
           </a>
         </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+      </ul>
+      <ul class="work-list" data-aos="fade-up" data-aos-duration="800">
+        <li class="work-item">
           <a href="javascript:void(0);">
             <div class="thumnail">
               <img src="./assets/img/duvetica.png" alt="듀베티카">
             </div>
             <ul class="info">
-              <li class="title">듀베티카</li>
-              <li class="desc">패션 브랜드 웹사이트 리뉴얼/운영</li>
-              <li class="date">2023. 02 ~ 2024. 02</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
+              <li class="title">DUVETICA</li>
+              <li class="desc"><div class="line"></div>이커머스 리뉴얼/운영</li>
             </ul>
           </a>
         </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
+        <li class="work-item">
           <a href="javascript:void(0);">
             <div class="thumnail">
               <img src="./assets/img/supra.png" alt="수프라">
             </div>
             <ul class="info">
-              <li class="title">수프라</li>
-              <li class="desc">패션 브랜드 웹사이트 신규 구축/운영</li>
-              <li class="date">2022. 12 ~ 2024. 02</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/ogam.png" alt="오감">
-            </div>
-            <ul class="info">
-              <li class="title">(주)오감코퍼레이션</li>
-              <li class="desc">회사소개 웹사이트 신규 구축</li>
-              <li class="date">2023. 09 ~ 2023. 11</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/arena.png" alt="아레나코리아">
-            </div>
-            <ul class="info">
-              <li class="title">아레나코리아</li>
-              <li class="desc">웹사이트 신규 구축/운영</li>
-              <li class="date">2022. 12 ~ 2023. 10</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 30%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/passion5.png" alt="패션5">
-            </div>
-            <ul class="info">
-              <li class="title">패션5</li>
-              <li class="desc">웹사이트 이전작업 및 리뉴얼</li>
-              <li class="date">2023. 04 ~ 2023. 06</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 100%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/paris_c.png" alt="파리크라상">
-            </div>
-            <ul class="info">
-              <li class="title">파리크라상</li>
-              <li class="desc">웹사이트 이전작업 및 리뉴얼</li>
-              <li class="date">2023. 04 ~ 2023. 06</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/paris_c_2.png" alt="파리크라상 상품권">
-            </div>
-            <ul class="info">
-              <li class="title">파리크라상 상품권</li>
-              <li class="desc">웹사이트 이전작업 및 리뉴얼</li>
-              <li class="date">2023. 04 ~ 2023. 06</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/arban.png" alt="어반브레이크">
-            </div>
-            <ul class="info">
-              <li class="title">2022 어반브레이크</li>
-              <li class="desc">웹사이트 신규 구축</li>
-              <li class="date">2022. 05 ~ 2022. 07</li>
-              <li class="keywords">
-                <span>반응형</span><span>기여도 50%</span>
-              </li>
-            </ul>
-          </a>
-        </li>
-        <li class="work-item" data-aos="fade-up" data-aos-duration="800">
-          <a href="javascript:void(0);">
-            <div class="thumnail">
-              <img src="./assets/img/hanmi.png" alt="한미면세앱">
-            </div>
-            <ul class="info">
-              <li class="title">한미면세앱 관리자페이지</li>
-              <li class="desc">관리자 전용 웹사이트(BO) 구축</li>
-              <li class="date">2022. 04 ~ 2022. 05</li>
-              <li class="keywords">
-                <span>적응형</span><span>기여도 100%</span>
-              </li>
+              <li class="title">SUPRA</li>
+              <li class="desc"><div class="line"></div>이커머스 구축/운영</li>
             </ul>
           </a>
         </li>
       </ul>
     </div>
+    <a href="javascript:void(0);" class="btn-detail" data-aos="fade-up" data-aos-duration="800">
+      VIEW ALL WORK
+    </a>
   </section>
   <section class="contact-sec">
     <ul class="contact-info">
