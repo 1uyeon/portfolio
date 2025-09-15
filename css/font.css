@@ -35,3 +35,34 @@
     font-weight: 900;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'ppneuemontreal';
+    src: url('/fonts/ppneuemontreal-thin.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ppneuemontreal';
+    src: url('/fonts/ppneuemontreal-book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ppneuemontreal';
+    src: url('/fonts/ppneuemontreal-medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ppneuemontreal';
+    src: url('/fonts/ppneuemontreal-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ppneuemontreal-italic';
+    src: url('/fonts/ppneuemontreal-italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
