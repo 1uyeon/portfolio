@@ -15,12 +15,8 @@ body {
   font-size: 16px;
   letter-spacing: -0.02em;
   overflow-x: hidden;
-  background-color: var(--black);
+  background-color: var(--white);
 }
-/* body.white {
-  color: #000;
-  background-color: #EDEAED ;
-} */
 body.modal-open {
   overflow: hidden;
   padding-right: var(--scrollbar-width);
@@ -683,9 +679,14 @@ header.contact-sec-active {
 @media all and (max-width: 767px) {
   .h-pf {
     font-size: 12px;
+    font-weight: bold;
   }
   .black-area .text1 {
+    top: 55%;
     padding: 0 5px;
+  }
+  .black-area .text2 {
+    top: 55%;
   }
   .black-area .text3 {
     bottom: 10px;
@@ -716,8 +717,17 @@ header.contact-sec-active {
     right: 20px;
   }
 
+  .ts-text {
+    top: 10%;
+  }
+  .work-sec .sec-title {
+    bottom: 20px;
+  }
   .work-sec .work-list {
     gap: 50px;
+  }
+  .work-sec .list-area {
+    top: 50%;
   }
   .work-sec .work-list .work-item {
     width: 250px;
@@ -734,5 +744,14 @@ header.contact-sec-active {
   
   .contact-sec {
     padding-top: 10vw;
+  }
+  .contact-info {
+    font-size: 13px;
+  }
+  .contact-info > li > span {
+    width: 65px;
+  }
+  .contact-now p {
+    font-size: 12.3vw;
   }
 }

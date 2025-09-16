@@ -1,3 +1,7 @@
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -17,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger: ".profile-sec",
           start: "top top",
           end: "bottom 60%",
-          scrub: true,
+          scrub: 1,
           invalidateOnRefresh: true
         }
       });
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger: ".profile-sec",
           start: "top top",
           end: "bottom 60%",
-          scrub: true,
+          scrub: 1,
           invalidateOnRefresh: true
         }
       });
@@ -183,70 +187,70 @@ document.addEventListener("DOMContentLoaded", () => {
   let startOffset = 100;  // 시작 시 살짝 보이는 정도
   let endOffset = 50;     // 끝에서 조금 더 나오는 정도
 
-  function createWorkTimeline() {
-    return gsap.timeline({
-      scrollTrigger: {
-        trigger: '.work-sec',
-        pin: true,
-        scrub: 0.3, // 모바일에서도 빠르게 반응
-        start: 'top top',
-        end: () => "+=" + (moveX + startOffset + endOffset),
-        invalidateOnRefresh: true
-      }
-    });
-  }
-
-  let scrollhoriz = createWorkTimeline();
-
-  // 리스트 전체 이동
-  scrollhoriz.fromTo(
-    workListWrapper,
-    { x: () => window.innerWidth - startOffset },  // 시작: 화면 오른쪽 살짝 보임
-    { x: () => -(moveX + endOffset), ease: 'none' }, // 끝: 마지막 아이템 조금 더 나옴
-    0
-  );
-
-  // 개별 아이템 회전 효과 (선택 사항)
-  scrollhoriz.fromTo(".rot1",
-    { rotate: -10 },
-    { rotate: 20, ease: "none" },
-    0
-  );
-  scrollhoriz.fromTo(".rot2",
-    { rotate: 15 },
-    { rotate: -10, ease: "none" },
-    0
-  );
-
-  // 모바일/데스크탑 대응
-  ScrollTrigger.matchMedia({
-    "(min-width:1024px)": () => {
-      // PC용: 기존 설정 유지
-      scrollhoriz.scrollTrigger.scrub = 1;
-    },
-    "(max-width:1023px)": () => {
-      // 모바일용: scrub 속도 빠르게, 이동 거리 줄임
-      scrollhoriz.scrollTrigger.scrub = 0.3;
-      startOffset = 50;
-      endOffset = 30;
-      moveX = workListWrapper.scrollWidth - window.innerWidth;
-
-      scrollhoriz.scrollTrigger.end = "+=" + (moveX + startOffset + endOffset);
+function createWorkTimeline() {
+  return gsap.timeline({
+    scrollTrigger: {
+      trigger: '.work-sec',
+      pin: true,
+      scrub: 0.3, // 모바일에서도 빠르게 반응
+      start: 'top top',
+      end: () => "+=" + (moveX + startOffset + endOffset),
+      invalidateOnRefresh: true
     }
   });
+}
 
-  // 리사이즈 / 방향 전환 대응
-  function updateWorkList() {
-    listWidth = workListWrapper.scrollWidth;
-    viewWidth = window.innerWidth;
-    moveX = listWidth - viewWidth;
+let scrollhoriz = createWorkTimeline();
+
+// 리스트 전체 이동
+scrollhoriz.fromTo(
+  workListWrapper,
+  { x: () => window.innerWidth - startOffset },  // 시작: 화면 오른쪽 살짝 보임
+  { x: () => -(moveX + endOffset), ease: 'none' }, // 끝: 마지막 아이템 조금 더 나옴
+  0
+);
+
+// 개별 아이템 회전 효과 (선택 사항)
+scrollhoriz.fromTo(".rot1",
+  { rotate: -10 },
+  { rotate: 20, ease: "none" },
+  0
+);
+scrollhoriz.fromTo(".rot2",
+  { rotate: 15 },
+  { rotate: -10, ease: "none" },
+  0
+);
+
+// 모바일/데스크탑 대응
+ScrollTrigger.matchMedia({
+  "(min-width:1024px)": () => {
+    // PC용: 기존 설정 유지
+    scrollhoriz.scrollTrigger.scrub = 1;
+  },
+  "(max-width:1023px)": () => {
+    // 모바일용: scrub 속도 빠르게, 이동 거리 줄임
+    scrollhoriz.scrollTrigger.scrub = 0.3;
+    startOffset = 50;
+    endOffset = 30;
+    moveX = workListWrapper.scrollWidth - window.innerWidth;
 
     scrollhoriz.scrollTrigger.end = "+=" + (moveX + startOffset + endOffset);
-    ScrollTrigger.refresh();
   }
+});
 
-  window.addEventListener("resize", updateWorkList);
-  window.addEventListener("orientationchange", updateWorkList);
+// 리사이즈 / 방향 전환 대응
+function updateWorkList() {
+  listWidth = workListWrapper.scrollWidth;
+  viewWidth = window.innerWidth;
+  moveX = listWidth - viewWidth;
+
+  scrollhoriz.scrollTrigger.end = "+=" + (moveX + startOffset + endOffset);
+  ScrollTrigger.refresh();
+}
+
+window.addEventListener("resize", updateWorkList);
+window.addEventListener("orientationchange", updateWorkList);
 
 
   // 한 글자씩 올라오는 효과
@@ -329,8 +333,4 @@ document.addEventListener("DOMContentLoaded", () => {
       pfModal.querySelector('.modal-box').scrollTop = 0;
     }
   });
-});
-
-window.addEventListener("resize", () => {
-  ScrollTrigger.refresh();
 });
