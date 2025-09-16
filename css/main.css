@@ -67,6 +67,7 @@ img {
 section {
   position: relative;
   padding: 10vw 25px 6vw;
+  overflow: hidden;
 }
 .fill-text > div {
     background: linear-gradient(
@@ -418,6 +419,7 @@ header.contact-sec-active {
   width: 100%;
   height: 100dvh;
   background-color: var(--white);
+  overflow: visible;
 }
 .marquee-wrap {
   position: absolute;
