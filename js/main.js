@@ -1,15 +1,74 @@
-window.addEventListener("resize", () => {
-  ScrollTrigger.refresh();
+// 브라우저가 스크롤 위치를 기억하지 않게 설정
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+// 새로고침이나 이동 시 항상 맨 위로
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+    ScrollTrigger.refresh();
+  }, 0);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
+  // 로딩페이지
+  const percentEl = document.getElementById("percent");
+  const loader = document.getElementById("loader");
+  let percent = 0;
+
+  gsap.fromTo(
+    percentEl,
+    { y: '150%'},   // 시작 상태
+    { y: '0',  duration: 1, ease: "power2.out" } // 끝 상태
+  );
+
+  function updatePercent() {
+    percent++;
+    percentEl.textContent = percent;
+
+    if (percent < 100) {
+      const progress = percent / 100;
+
+      // 기본 딜레이 (앞은 빠르고 뒤는 조금 느려짐)
+      const baseDelay = 5;   // 최소
+      const extraDelay = 30;  // 뒤로 갈수록 추가
+      let delay = baseDelay + extraDelay * progress * progress;
+
+      // 랜덤 멈칫 포인트 
+      const pausePoints = [80, 95];
+      if (pausePoints.some(p => Math.abs(percent - p) < 2)) {
+        delay += 100; // 0.1초 멈칫
+      }
+
+      setTimeout(updatePercent, delay);
+    } else {
+      // 100 도달 시 약간 멈칫 후 종료
+      setTimeout(() => {
+        gsap.to(percentEl, {
+          y: "150%"
+        });
+        gsap.to(loader, {
+          // opacity: 0,
+          duration: 0.5,
+          delay: 0.8,
+          height: 0,
+          onComplete: () => {
+            loader.style.display = "none";
+          }
+        });
+      }, 100);
+    }
+  }
+  updatePercent();
+
   // 메인화면
   gsap.from(".big-text", {
     y: -200,           
     opacity: 0,        
-    duration: 0.7,
+    duration: 1,
+    delay: 3.5,
     ease: "power2.out",
   });
   ScrollTrigger.matchMedia({
@@ -42,15 +101,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   gsap.to(".black-area",
     { height: "80dvh",
-      delay: 0.5, 
+      delay: 3, 
       duration: 1, 
       ease: "power2.out"
     }
   );
   gsap.from(".small-text", {
     y: "100%",
-    delay: 1,
-    duration: 0.7,
+    duration: 1,
+    delay: 4,
     opacity: 0,
     ease: "power2.out",
   });
@@ -87,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".cube-sec",
-      start: "top top",
+      start: "top 30%",
       toggleActions: "play none none reverse" 
     }
   });
@@ -332,5 +391,23 @@ window.addEventListener("orientationchange", updateWorkList);
       unblockBodyScroll();
       pfModal.querySelector('.modal-box').scrollTop = 0;
     }
+  });
+
+  // Back to top 버튼
+  const scrollToTopBtn = document.querySelector(".btn-gotop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      scrollToTopBtn.classList.add("active");
+    } else {
+      scrollToTopBtn.classList.remove("active");
+    }
+  });
+
+  scrollToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" 
+    });
   });
 });
